@@ -1,0 +1,100 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+\documentclass{cquptProjectReport}
+\TheNameOfTheProject{\textbf{课程名称}}
+\TheTitleOfTheProject{\textbf{设计题目}}
+\ClassNum{\textbf{专业班级}}
+\StudentID{\textbf{学号}}
+\Name{\textbf{姓名}}
+\Teacher{\textbf{导师}}
+\Season{3} % 这是学期选择关键字，1代表春季学期，3代表秋季学期
+\KeyWord{\textbf{微电网}\quad \textbf{拓扑结构}\quad \textbf{供电模式}}
+
+\usepackage{lipsum}
+
+\begin{document}
+\begin{titlepage}
+\end{titlepage}
+\begin{abstract}
+	\lipsum[1-3]
+\end{abstract}
+
+\tableofcontents
+\thispagestyle{empty}\setcounter{page}{0}
+\newpage
+\section{微电网的基本概念及组成}
+\subsection{微电网的定义}
+目前世界上分布式电源的发展中出现了布置更为分散、单个机组产能规模较小、与用户侧距离缩短、更适合用户需求的分散式电源趋势。随着分布式电源的渗透率越来越高，给电网带来越来越深刻的影响。常规配电系统的结构和运行策略并不能很好的适应目前的变化趋势，20世纪初，微电网（Micro-Grid）的概念被学者提出\cite{1}。\par
+将分布式电源以微电网的形式接入配电网，被普遍认为是利用分布式电源有效的方式之一。美国电气可靠性技术解决方案联合会（Consortium for Electric Reliability Technology Solutions，CERTS）定义的微电网概念：微电网是一种由负荷和微型电源共同组成的系统，它可同时提供电能和热量；微电网内部的电源主要是由电力电子器件负责能量转换，并提供必要的控制；微电网相对于外部大电网表现为单一的受控单元，并可同时满足用户对电能质量和供电安全等方面的要求\cite{2}。\par
+CERT的定义从结构、控制、功能等方面给出了较为全面的微电网的概念，说明微电网是一个能够实现自我控制、保护和管理的自治系统\cite{1}。它既可以与电网联网运行，也可以在电网发生故障的时候与主网无缝解列或形成孤岛运行。\par
+\subsection{微电网的组成与特点}
+微电网是由分布式电源、负荷、储能装置和能量转换控制装置组成的，如图\ref{微电网的组成}所示。微电网中通常包含多种微型发电单元，其中包括太阳能光伏发电，风能发电，微型燃气轮机发电，燃料电池和柴油机发电等。\par
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{microgridconfirm.png}
+	\caption{微电网的组成}\label{微电网的组成}
+\end{figure}
+将分布式电源以微电网的形式接入配电网，使微电网作为配电网和分布式电源的纽带，使得配电网不必直接面对种类不同、归属不同、数量庞大、分散接入的（甚至是间歇性的）分布式电源（distributed generator，DG）。另外发电系统可以是电热联产的，也可以是冷热电联产，方便地就地向用户提供热能，以此提高分布式电源的利用效率\cite{1}。微电网系统中的储能装置可以实现微电网的能量储存和负荷的削峰填谷和黑启动功能。微电网配备的能量管理与控制系统可以解决微电网中的能量管理、并离网切换控制、潮流控制、保护控制等一系列问题。\par
+整个微电网在公共连接点（Point of Common Coupling，PPC）处通过断路器与上级电网变电站与主电网相连凭，凭借微电网的运行控制和能量管理等关键技术，可以实现其并网或孤岛运行、降低间歇性分布式电源给配电网带来的不利影响，最大限度地利用分布式电源出力，提高供电可靠性和电能质量。微电网是一个可以实现自我控制、保护和管理的自治系统，它作为完整的电力系统，依靠自身的控制及管理供能实现功率平衡控制、系统运行优化、故障检测与保护、电能质量治理等方面的功能。\par
+\section{微电网的拓扑结构}
+\subsection{微电网拓扑结构的定义}
+\begin{table}[h]
+	% \renewcommand\arraystretch{1.3}
+	\centering
+	\caption{符号定义}
+	\begin{tabular}{p{3cm}<{\centering}p{8cm}<{\centering}}
+		\toprule[1.5pt]
+		\textbf{符号} & \multicolumn{1}{c}{符号说明}           \\
+		\midrule[1pt]
+		$y(t)$        & \tabincell{c}{网络模型输出变量         \\（即养老服务床位数量）} \\
+		$x(t)$        & \tabincell{c}{神经网络模型外部输入变量 \\（即主要指标）}   \\
+		$\nabla$      & 差分记号                               \\
+		$\phi_0$      & 待估计截距项                           \\
+		$\beta_1$     & 待估计系数                             \\
+		W             & 机构养老企业的利润                     \\
+		Z             & 增加就业总量                           \\
+		$x_i,y_i$     & 床位数量、划分到每张床的补贴           \\
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
+微电网的拓扑结构具体包括微电网内部的电气接线网络结构、供电制式(直流/交流供电和三相/单相供电)、相应负荷和分布式电源所在微电网的节点位置等。典型电气接线网络结构有树状拓扑结构、辐射型拓扑结构、环形拓扑结构、双电网并入式拓扑结构和双电网并入式带环状结构等\cite{3}。典型供电制式有直流微电网、交流微电网和交直流混合微电网等。\par
+以某高校为例进行交直流混合微电网结构设计如图\ref{某高校微电网结构}所示\cite{7}，并对所提出的设计原则进行适应性分析。\par
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{\textbf{参考文献}}
+\begin{thebibliography}{99}
+	\bibitem{1}王曼,杨素琴.新能源并网与发电技术[M].北京：中国电力出版社，2017.
+	\bibitem{2}杨秀,李宏仲,赵晶晶.分布式发电及储能技术基础[M].北京：中国水利电力出版社，2013.
+	\bibitem{3}占晓友,文水枭,邵华.基于拓扑结构与单元位置选择的微电网系统经济性分析[J].分布式能源,2016,1(03):49-54.
+	\bibitem{4}王彦宇,郭权利.微电网示范工程综述[J].沈阳工程学院学报(自然科学版),2019,15(01):82-87.
+	\bibitem{5}柯人观. 微电网典型供电模式及微电源优化配置研究[D].浙江大学,2013.
+	\bibitem{6}陈颖. 直交流混合微电网关键技术研究与工程应用[D].厦门大学,2017.
+	\bibitem{7}朱永强,贾利虎,王银顺.微电网结构设计的基本原则[J].电工电能新技术,2015,34(09):44-49+63.
+\end{thebibliography}
+\newpage
+\appendix
+\ctexset{section={
+	  format={\zihao{-4}\heiti\raggedright}
+	 }}
+\begin{center}
+	\heiti\zihao{4} 附\hspace{1pc}录
+\end{center}
+\section{代码}
+\begin{python}
+	from iteration_utilities import deepflatten
+  
+	# if you only have one depth nested_list, use this
+	def flatten(l):
+	  return [item for sublist in l for item in sublist]
+  
+	l = [[1,2,3],[3]]
+	print(flatten(l))
+	# [1, 2, 3, 3]
+  
+	# if you don't know how deep the list is nested
+	l = [[1,2,3],[4,[5],[6,7]],[8,[9,[10]]]]
+  
+	print(list(deepflatten(l, depth=3)))
+	# [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  
+\end{python}
+\end{document}
